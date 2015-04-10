@@ -7,10 +7,10 @@ var scott = require('../lib');
 
 var cli = nash();
 
-// register help/text
+// help/usage
 cli.register({register: require('./help')});
 
-// Linter
+// linter
 cli.command('lint', 'l')
   .handler(function (data, flags, done) {
     

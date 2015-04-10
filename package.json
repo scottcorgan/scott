@@ -1,10 +1,13 @@
 {
   "name": "scott",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "My settings for my modules (linter, etc.)",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "scott": "bin/cmd.js",
   },
   "repository": {
     "type": "git",
