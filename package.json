@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/scottcorgan/scott/issues"
   },
-  "homepage": "https://github.com/scottcorgan/scott"
+  "homepage": "https://github.com/scottcorgan/scott",
+  "dependencies": {
+    "nash": "^2.0.1"
+  }
 }
