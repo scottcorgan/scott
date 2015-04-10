@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/scottcorgan/scott",
   "dependencies": {
+    "chalk": "^1.0.0",
+    "eslint": "^0.18.0",
+    "lodash": "^3.6.0",
     "nash": "^2.0.1"
   }
 }
