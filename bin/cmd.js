@@ -10,7 +10,6 @@ cli.register([
   {
     register: require('./help')
   }
-], function () {
-  
-  cli.run(process.argv);
-});
+]);
+
+cl.run(process.argv);
