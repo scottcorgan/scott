@@ -20,6 +20,11 @@ cli.command('lint', 'l')
     scott.lint(data, (err, report) => {
 
       process.stdout.write(formatter(report.results))
+
+      if (report.errorCount > 0) {
+        process.exit(1)
+      }
+      
       done()
     })
   })
