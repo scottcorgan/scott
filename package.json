@@ -1,6 +1,6 @@
 {
   "name": "scott",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "My settings for my modules (linter, etc.)",
   "main": "lib/index.js",
   "scripts": {
