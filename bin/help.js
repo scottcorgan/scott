@@ -1,6 +1,6 @@
-var fs = require('fs');
+'use strict'
 
-var usage = [
+let usage = [
   '',
   'A command-line application to make Scott\'s modules',
   '',
@@ -16,24 +16,24 @@ var usage = [
   'Options',
   '',
   '  -h,--help    display usage/help text'
-].map(function (line) { return '  ' + line;}).join('\n');
+].map(line => `  ${line}`).join('\n')
 
 
 module.exports = function (cli, options, done) {
-  
+
   cli.default()
-    .handler(function (data, flags, done) {
-      
-      console.log(usage);
-      done();
-    });
+    .handler((data, flags, defaultDone) => {
+
+      process.stdout.write(usage)
+      defaultDone()
+    })
 
   cli.flag('-h', '--help', '--usage')
-    .handler(function (data, done) {
-      
-      console.log(usage);
-      process.exit(0);
-    });
-  
-  done();
-};
+    .handler(() => {
+
+      process.stdout.write(usage)
+      process.exit(0)
+    })
+
+  done()
+}

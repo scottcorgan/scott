@@ -4,10 +4,11 @@
   "description": "My settings for my modules (linter, etc.)",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "bin/cmd.js lint -- ./lib/** ./bin/*.js"
   },
   "bin": {
-    "scott": "bin/cmd.js",
+    "scott": "bin/cmd.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,10 @@
   },
   "homepage": "https://github.com/scottcorgan/scott",
   "dependencies": {
+    "babel-eslint": "5.0.0",
     "chalk": "^1.0.0",
-    "eslint": "^0.18.0",
+    "eslint": "1.10.3",
+    "eslint-plugin-lw": "1.0.1",
     "lodash": "^3.6.0",
     "nash": "^2.0.1"
   }

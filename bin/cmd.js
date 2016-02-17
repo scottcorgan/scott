@@ -1,31 +1,27 @@
 #!/usr/bin/env node
 
-var nash = require('nash');
-var format = require('chalk');
+'use strict'
 
-var scott = require('../lib');
+let nash = require('nash')
+let CLIEngine = require('eslint').CLIEngine
+let scott = require('../lib')
 
-var cli = nash();
+let cli = nash()
 
 // help/usage
-cli.register({register: require('./help')});
+cli.register({register: require('./help')})
 
 // linter
 cli.command('lint', 'l')
-  .handler(function (data, flags, done) {
-    
-    var env = flags.env ? flags.env.split(',') : [];
-    
-    scott.lint(data, {env: env}, function (err, report) {
-      
-      report.results.forEach(function (result) {
-        
-        console.log(result);
-      });
-      
-      done();
-    });
-    
-  });
+  .handler((data, flags, done) => {
 
-cli.run(process.argv);
+    let formatter = CLIEngine.getFormatter('stylish')
+
+    scott.lint(data, (err, report) => {
+
+      process.stdout.write(formatter(report.results))
+      done()
+    })
+  })
+
+cli.run(process.argv)
